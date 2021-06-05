@@ -1,0 +1,25 @@
+.filters-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.filter {
+    display: flex;
+    padding: 10px 0;
+    width: 200px;
+}
+
+.by-gender {
+    flex-direction: column;
+}
+
+.by-age {
+    flex-wrap: wrap;
+
+    label {
+        width: 50%;
+        min-width: 50px;
+    }
+}

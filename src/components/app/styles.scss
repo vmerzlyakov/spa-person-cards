@@ -1,0 +1,23 @@
+$app-padding: 40px 120px;
+$app-padding-min-width-1199: 40px 16px;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    padding: $app-padding;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@media screen and (max-width: 1199px) {
+    .app {
+        padding: $app-padding-min-width-1199;
+    }
+}
+
