@@ -10,13 +10,15 @@ function Card({
 }) {
 
     return (
-        <div className="card">
-            <img
-                className="picture"
-                src={ picture.large }
-            />
-            <div className="person-data">
-                <label> { name.first } </label>
+        <div className="card-wrapper">
+            <div className="card">
+                <img
+                    className="picture"
+                    src={ picture.large }
+                />
+                <div className="person-data">
+                    <label> { name.first } </label>
+                </div>
             </div>
         </div>);
 }

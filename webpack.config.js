@@ -6,9 +6,9 @@ module.exports = {
     entry: {
         home: './src/index.js'
     },
-    mode: "development",
+    mode: 'development',
     output: {
-        filename: "./main.js",
+        filename: './main.js',
         path: path.resolve(__dirname, 'public/build')
     },
     devServer: {
@@ -21,22 +21,19 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        rules: [
-          {
+        rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader"
+              loader: 'babel-loader'
             }
-          },
-          {
+        }, {
             test: /\.scss$/,
             use: [
-              "style-loader",
-              "css-loader",
-              "sass-loader"
+              'style-loader',
+              'css-loader',
+              'sass-loader'
             ]
-          },
-        ]
-      }
+        }]
+    }
 };

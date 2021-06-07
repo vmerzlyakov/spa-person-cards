@@ -7,6 +7,7 @@ html, body {
 }
 
 .app {
+    max-width: 1440px;
     padding: $app-padding;
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -20,4 +21,3 @@ html, body {
         padding: $app-padding-min-width-1199;
     }
 }
-
