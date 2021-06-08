@@ -1,12 +1,12 @@
 import React from 'react';
 
-function SearchBoard() {
+function SearchBar() {
     return (
-        <div className="search-board-wrapper">
+        <div className="search-bar-wrapper">
             <input
-                className="search-board"
+                className="search-bar"
                 placeholder="Начните вводить..."
-                key="searchBoard"
+                key="searchBar"
             />
             <div className="magnifier">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,9 +14,8 @@ function SearchBoard() {
                     <line x1="12.3387" y1="12.8192" x2="17.7071" y2="18.1876" stroke="#C1C1C1" strokeWidth="2"/>
                 </svg>
             </div>
-
         </div>
     );
 }
 
-export default SearchBoard;
+export default SearchBar;

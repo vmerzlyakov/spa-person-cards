@@ -1,4 +1,4 @@
-const getFilterDescription = ({ from, to }) =>
+const getFilterCode = ({ from, to }) =>
     `${from}${!to ? '+' : '-' + to}`;
 
 const filterByAgeTypes = [
@@ -20,9 +20,9 @@ const filterByAgeTypes = [
     },
 ];
 
-export const filtersByAge = filterByAgeTypes.map(f => ({
+export const filtersSetByAge = filterByAgeTypes.map(f => ({
     ...f,
-    description: getFilterDescription(f)
+    code: getFilterCode(f)
 }));
 
 export const filterCodes = {

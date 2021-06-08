@@ -6,3 +6,10 @@ export function setFilterByGender(filter) {
         filter
     };
 }
+
+export function setFilterByAge(filter) {
+    return { 
+        type: actions.SET_FILTER_BY_AGE,
+        filter
+    };
+}

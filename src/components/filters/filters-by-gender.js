@@ -1,20 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { filtersByGender } from '../../constants/filter';
-import { setFilterByGender } from '../../actions/filters';
-import { filterPersonByGender } from '../../actions/persons';
 
-function FilterByGender({
-    checkedFilter,
-    filterPersonByGender,
-    setFilterByGender
-}) {
-    const handleOnClickCheckBox = filter => {
-        setFilterByGender(filter);
-        filterPersonByGender(filter);
-    }
-
+function FilterByGender({ checkedFilter, handleOnChange }) {
     return <div className="filter by-gender">
         { filtersByGender.map(filter => (
             <label className="radio" key={ filter.code }>
@@ -23,7 +11,7 @@ function FilterByGender({
                     type="radio"
                     name="sex"
                     checked={ filter.code === checkedFilter }
-                    onChange={ () => handleOnClickCheckBox(filter.code) }
+                    onChange={ () => handleOnChange(filter.code) }
                 />
                 <div className="radio-marker"></div>
                 { filter.name }
@@ -32,15 +20,5 @@ function FilterByGender({
     </div>;
 }
 
-const mapStateToProps = state => ({
-    checkedFilter: state.filtersReducer.filterByGender
-})
 
-const mapDispatchToProps = {
-    setFilterByGender,
-    filterPersonByGender
-}
-
-const filterByGenderContainer = connect(mapStateToProps, mapDispatchToProps)(FilterByGender);
-
-export default filterByGenderContainer;
+export default FilterByGender;
