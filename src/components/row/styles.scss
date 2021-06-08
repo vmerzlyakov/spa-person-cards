@@ -1,0 +1,20 @@
+.row {
+    display: flex;
+}
+
+.cell {
+    display: inline-flex;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-size: 10px;
+    line-height: 13px;
+    color: #000000;
+}
+
+.cell-name {
+    font-weight: normal;
+}
+
+.cell-value {
+    font-weight: bold;
+}

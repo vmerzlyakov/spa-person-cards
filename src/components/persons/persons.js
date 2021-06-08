@@ -30,7 +30,7 @@ function Persons({ savePersons, filteredPersons }) {
                     location={ p.location }
                     name={ p.name }
                     picture={ p.picture }
-                    registred={ p.registred }
+                    registered={ p.registered }
                     key={ `${p.id.value}${p.registered.date}` }
                 />
             )) }

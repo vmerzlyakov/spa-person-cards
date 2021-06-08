@@ -42,8 +42,5 @@
         "@babel/transform-runtime"
       ]
     ]
-  },
-  "browserslist": [
-    "ie 11"
-  ]
+  }
 }

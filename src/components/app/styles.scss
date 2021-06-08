@@ -1,4 +1,4 @@
-$app-padding: 40px 120px;
+$app-margin: 40px auto;
 $app-padding-min-width-1199: 40px 16px;
 
 html, body {
@@ -7,8 +7,8 @@ html, body {
 }
 
 .app {
-    max-width: 1440px;
-    padding: $app-padding;
+    width: 1200px;
+    margin: $app-margin;
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -18,6 +18,7 @@ html, body {
 
 @media screen and (max-width: 1199px) {
     .app {
+        width: auto;
         padding: $app-padding-min-width-1199;
     }
 }

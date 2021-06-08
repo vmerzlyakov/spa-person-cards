@@ -9,12 +9,13 @@ module.exports = {
     mode: 'development',
     output: {
         filename: './main.js',
-        path: path.resolve(__dirname, 'public/build')
+        path: path.resolve(__dirname, 'assets')
     },
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
         hot: true,
+        publicPath: '/assets/',
         port: 7777,
         progress: true,
         watchContentBase: true
@@ -35,5 +36,6 @@ module.exports = {
               'sass-loader'
             ]
         }]
-    }
+    },
+    target: ['web', 'es5']
 };
