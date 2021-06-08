@@ -18,6 +18,7 @@ module.exports = {
         publicPath: '/assets/',
         port: 7777,
         progress: true,
+        stats: 'normal',
         watchContentBase: true
     },
     devtool: 'source-map',
@@ -37,5 +38,5 @@ module.exports = {
             ]
         }]
     },
-    target: ['web', 'es5']
+    target: 'web'
 };

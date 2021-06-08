@@ -1,5 +1,5 @@
 import * as actions from '../constants/actionTypes';
-import { filterCodes } from '../constants/filterTypes';
+import { filterCodes } from '../constants/filter';
 
 const initialState = {
     persons: [],

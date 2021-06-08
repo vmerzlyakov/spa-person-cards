@@ -8,17 +8,68 @@
 .filter {
     display: flex;
     width: 200px;
+    
+    .input {
+        display: none;
+    }
+
+    .checkBox,
+    .radio {
+        display: inline-flex;
+        margin-bottom: 13px;
+        align-items: center;
+    }
+
+    .checkBox-marker,
+    .radio-marker {
+        display: inline-flex;
+        margin-right: 6px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+    }
 }
 
 .by-gender {
     flex-direction: column;
+    
+    .radio-marker {
+        border-radius: 50%;
+    }
+    
+    input:checked + .radio-marker {
+        border-width: 6px;
+    }
 }
 
 .by-age {
     flex-wrap: wrap;
-
+    align-content: flex-start;
+    
     label {
         width: 50%;
         min-width: 50px;
+    }
+
+    .checkBox-marker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+
+        svg {
+            display: none;
+        }
+    }
+    
+    input:checked + .checkBox-marker {
+        border: 2px solid #FFCC33;
+        box-sizing: border-box;
+        border-radius: 2px;
+
+        svg {
+            display: inline-flex;
+        }
     }
 }

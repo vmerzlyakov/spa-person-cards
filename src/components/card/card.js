@@ -38,6 +38,7 @@ function Card({
                         <Row
                             cellName={ name }
                             cellValue={ value }
+                            key={ name }
                             withShadow={ name === GENDER }
                         />
                     ) }

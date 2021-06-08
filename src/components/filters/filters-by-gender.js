@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { filterCodes, filtersByGender } from '../../constants/filterTypes';
+import { filtersByGender } from '../../constants/filter';
 import { setFilterByGender } from '../../actions/filters';
 import { filterPersonByGender } from '../../actions/persons';
 
@@ -17,13 +17,15 @@ function FilterByGender({
 
     return <div className="filter by-gender">
         { filtersByGender.map(filter => (
-            <label key={filter.code}>
-                <input 
+            <label className="radio" key={ filter.code }>
+                <input
+                    className="input"
                     type="radio"
                     name="sex"
                     checked={ filter.code === checkedFilter }
                     onChange={ () => handleOnClickCheckBox(filter.code) }
                 />
+                <div className="radio-marker"></div>
                 { filter.name }
             </label>)
         ) }
