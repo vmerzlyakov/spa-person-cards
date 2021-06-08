@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Row({ cellName, cellValue }) {
+export default function Row({ cellName, cellValue, withShadow }) {
     return (
-        <div className="row">
+        <div className={ withShadow ? "row row-shadow" : "row" }>
             <label className="cell cell-name">
-                { `${cellName}:` }
+                { `${cellName}:\u00a0` }
             </label>
             <label className="cell cell-value">
                 { cellValue }

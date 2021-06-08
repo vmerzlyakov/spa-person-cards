@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Row from '../row';
+import {
+    AGE,
+    GENDER,
+    ADDRESS,
+    REGISTRATION_DATE,
+    translateGender
+} from '../../constants/card'
 
-const genderMap = {
-    male: 'Мужской',
-    female: 'Женский'
-};
-
-const translateGender = value => genderMap[value];
 
 function Card({
     dob,
@@ -18,11 +19,12 @@ function Card({
     registered
 }) {
     const infos = {
-        'Возраст': dob.age,
-        'Пол': translateGender(gender),
-        'Адрес': `${location.country},${location.city}`,
-        'Дата регистрации': new Date(registered.date).toLocaleDateString()
+        [AGE]: dob.age,
+        [GENDER]: translateGender(gender),
+        [ADDRESS]: `${location.country},${location.city}`,
+        [REGISTRATION_DATE]: new Date(registered.date).toLocaleDateString()
     };
+
     return (
         <div className="card-wrapper">
             <div className="card">
@@ -33,7 +35,11 @@ function Card({
                 <div className="person-data">
                     <label> { name.first } </label>
                     { Object.entries(infos).map(([ name, value ]) =>
-                        <Row cellName={ name } cellValue={ value } />
+                        <Row
+                            cellName={ name }
+                            cellValue={ value }
+                            withShadow={ name === GENDER }
+                        />
                     ) }
                 </div>
             </div>
