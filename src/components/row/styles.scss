@@ -14,8 +14,10 @@
 .cell-name {
     font-weight: normal;
     color: rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
 }
 
 .cell-value {
     font-weight: bold;
+    white-space: wrap;
 }

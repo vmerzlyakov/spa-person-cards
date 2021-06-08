@@ -1,12 +1,28 @@
 .search-board-wrapper {
+    position: relative;
     padding: 10px 0;
 }
+
 .search-board {
     height: 40px;
     width: 100%;
-    padding: 0 12px;
+    padding: 0 42px 0 12px;
     background: #FFFFFF;
     border: 1px solid #75BEEE;
     box-sizing: border-box;
     border-radius: 3px;
+    outline: none;
+    
+    &::placeholder {
+        color: #B3B3B3;
+    }
+    
+    &::-ms-clear {  display: none; width : 0; height: 0; }
+}
+
+.magnifier {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
 }
