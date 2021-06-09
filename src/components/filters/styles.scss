@@ -5,6 +5,18 @@
     width: 100%;
 }
 
+.filter-header {
+    margin-bottom: 8px;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #000000;
+
+}
+
 .filter {
     display: flex;
     width: 200px;
