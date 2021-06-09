@@ -6,34 +6,42 @@ import Filters from '../filters'
 import Persons from '../persons'
 import { url } from '../../constants/app'
 import { savePersons } from '../../actions/persons';
-import { filterPersons } from '../../actions/persons';
 
 function App({
     savePersons,
-    filterPersons,
     filteredPersons
 }) {
     useEffect(() => {
         const fetchPersons = async () => {
             const res = await axios(url);
             savePersons(res.data.results);
+            localStorage.setItem('persons', JSON.stringify(res.data.results));
         };
 
-        fetchPersons();
-    }, []);
+        const savedPersons = localStorage.getItem('persons');
 
-    const handleOnChangeFilters = filters => filterPersons(filters);
+        if (savedPersons) {
+            try {
+                const res = JSON.parse(savedPersons);
+                savePersons(res);
+            } catch {
+                localStorage.removeItem('persons');
+                fetchPersons();
+            }
+        } else {
+            fetchPersons();
+        }
+    }, []);
 
     return (
         <div className="app">
-            <Filters handleOnChangeFilters={ handleOnChangeFilters }/>
+            <Filters />
             <Persons persons={ filteredPersons } />
         </div>
     );
 }
 
 const mapDispatchToProps = {
-    filterPersons,
     savePersons
 }
 
