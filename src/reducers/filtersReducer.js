@@ -3,7 +3,8 @@ import { filterCodes } from '../constants/filter';
 
 const initialState = {
     filterByGender: filterCodes.ALL,
-    filtersByAge: {}
+    filtersByAge: {},
+    searchBar: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -23,6 +24,12 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 filtersByAge: newFilters                
+            };
+
+        case actions.SET_SEARCH_BAR_VALUE:
+            return {
+                ...state,
+                searchBar: action.value
             };
                 
         default:

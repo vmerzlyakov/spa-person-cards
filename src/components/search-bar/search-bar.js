@@ -1,12 +1,14 @@
 import React from 'react';
 
-function SearchBar() {
+function SearchBar({ onChange, value }) {
     return (
         <div className="search-bar-wrapper">
             <input
                 className="search-bar"
                 placeholder="Начните вводить..."
                 key="searchBar"
+                onChange={ onChange }
+                value={ value }
             />
             <div className="magnifier">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">

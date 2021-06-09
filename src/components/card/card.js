@@ -33,7 +33,7 @@ function Card({
                     src={ picture.large }
                 />
                 <div className="person-data">
-                    <label> { name.first } </label>
+                    <label> { `${name.first} ${name.last}` } </label>
                     { Object.entries(infos).map(([ name, value ]) =>
                         <Row
                             cellName={ name }

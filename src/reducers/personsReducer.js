@@ -37,9 +37,23 @@ const filterPersons = (persons, filters) => {
         );
     }
 
+    if (searchBar && searchBar.length > 3) {
+        const str = searchBar.toLowerCase();
+        filteredPersons = filteredPersons.filter(p => {
+            const { first, last } = p.name;
+            const { city, country } = p.location;
+
+            return (
+                ~first.toLowerCase().indexOf(str) ||
+                ~last.toLowerCase().indexOf(str) ||
+                ~city.toLowerCase().indexOf(str) ||
+                ~country.toLowerCase().indexOf(str)
+            );
+        });
+    }
+
     return filteredPersons;
 }
-    // persons.filter(p => filter === filterCodes.ALL || p.gender === filter);
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {

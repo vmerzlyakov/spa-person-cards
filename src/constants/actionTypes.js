@@ -6,4 +6,5 @@ export const FILTER_PERSONS = 'FILTER_PERSONS';
 export const SET_FILTER_BY_AGE = 'SET_FILTER_BY_AGE';
 export const SET_FILTER_BY_GENDER = 'SET_FILTER_BY_GENDER';
 
-// Search board
+// Search bar
+export const SET_SEARCH_BAR_VALUE = 'SET_SEARCH_BAR_VALUE';
