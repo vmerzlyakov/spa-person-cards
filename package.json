@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack"
+    "dev-ie": "cross-env IS_IE=true webpack serve",
+    "build-dev": "webpack",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.34.1",
@@ -44,5 +47,10 @@
         "@babel/transform-runtime"
       ]
     ]
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE 11"
+  ]
 }

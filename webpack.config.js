@@ -1,12 +1,22 @@
 'use stricts'
 
-var path = require('path');
+const path = require('path');
+
+const DEV = 'development';
+const PROD = 'production';
+
+const {
+    NODE_ENV = 'development',
+    IS_IE
+} = process.env;
+
+const isProd = NODE_ENV === PROD;
 
 module.exports = {
     entry: {
         home: './src/index.js'
     },
-    mode: 'development',
+    mode: isProd ? PROD : DEV,
     output: {
         filename: './main.js',
         path: path.resolve(__dirname, 'assets')
@@ -38,5 +48,5 @@ module.exports = {
             ]
         }]
     },
-    target: 'web'
+    target: isProd || IS_IE ? 'browserslist' : 'web' 
 };
